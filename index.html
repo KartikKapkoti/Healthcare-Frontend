@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS + SCSS</title>
+    <link href="/src/styles.scss" rel="stylesheet">
+    <script src="/src/index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-gray-200 shadow-md">
+        <div class="container mx-auto px-4 flex items-center justify-between py-3">
+            <!-- Logo -->
+            <div class="flex items-center gap-[11.09px]" style="opacity: 1;">
+                <img src="./src/assests/Logo.png" alt="PatientGrid Logo" class="w-[190px] h-[33.26px]">
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex items-center space-x-6 text-gray-700 font-medium">
+                <!-- Desktop Links -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="hover:text-blue-500">Products</a>
+                    <a href="#" class="hover:text-blue-500">Plans</a>
+                    <div class="relative">
+                        <button class="hover:text-blue-500 focus:outline-none">More <span>▼</span></button>
+                    </div>
+                    <a href="#" class="hover:text-blue-500">Login</a>
+                    <a href="#" class="bg-[#2A0896] text-white flex items-center justify-center px-6 py-3 rounded-full opacity-100 shadow-md hover:opacity-90">
+                        Request a demo
+                    </a>
+                </nav>
+
+                <!-- Hamburger Menu Button -->
+                <button id="hamburger" class="md:hidden text-gray-700 focus:outline-none">
+                    <span class="block w-6 h-0.5 bg-gray-700 mb-1"></span>
+                    <span class="block w-6 h-0.5 bg-gray-700 mb-1"></span>
+                    <span class="block w-6 h-0.5 bg-gray-700"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu  -->
+            <div id="mobile-menu" class="md:hidden hidden absolute top-20 left-0 w-full bg-gray-200 py-4">
+                <nav class="flex flex-col items-center space-y-4">
+                    <a href="#" class="hover:text-blue-500">Products</a>
+                    <a href="#" class="hover:text-blue-500">Plans</a>
+                    <div class="relative">
+                        <button class="hover:text-blue-500 focus:outline-none">More <span>▼</span></button>
+                    </div>
+                    <a href="#" class="hover:text-blue-500">Login</a>
+                    <a href="#" class="bg-[#2A0896] text-white flex items-center justify-center px-6 py-3 rounded-full opacity-100 shadow-md hover:opacity-90">
+                        Request a demo
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Text -->
+    <div class="text-center mt-10">
+        <!-- First paragraph -->
+        <p class="text-[70px] font-[500] leading-[92px] mt-2 mb-2 text-center font-poppins underline-from-font decoration-none capitalize 
+            sm:text-[30px] sm:leading-[40px] md:text-[50px] md:leading-[65px] xs:text-[20px] xs:leading-[28px]">
+            Medical software to attract and <span class="font-extrabold">retain patients</span>
+        </p>
+    
+        <!-- Second paragraph -->
+        <p class="mt-6 text-[22px] font-[500] leading-[32px] mb-0 text-center underline-from-font decoration-none font-poppins text-gray-700
+            sm:text-[18px] sm:leading-[24px] md:text-[20px] md:leading-[28px] xs:text-[15px] xs:leading-[20px]">
+            Patientgrid’s communication platform helps improve patient experience while saving staff hours.
+        </p>
+    </div>
+    
+
+    <div class="flex items-center justify-center mt-10 space-x-4">
+        <!-- Text -->
+        <p class="text-[22px] font-[500] leading-[33px] text-left font-poppins underline-from-font decoration-none">
+            Start For Free
+        </p>
+        <!-- PNG Image -->
+        <img src="./src/assests/start-icon.png" alt="Start Icon" class="w-[30px] h-[34.8px] opacity-100 transition-transform duration-300 ease-in-out hover:scale-x-125">
+    </div>
+
+    <!-- Patientgrid component -->
+    <div class="min-h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('./src/assests/background.png');min-height: 120vh;">
+        <div class="bg-white shadow-lg rounded-lg max-w-4xl w-[90%] sm:w-[80%] lg:w-[70%] relative">
+            <!-- Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b mt-3">
+                <div class="flex items-center space-x-2">
+                    <img src="./src/assests/logo.png" alt="Patientgrid Logo" class="w-30 h-6">
+                </div>
+                <h3 class="text-xl font-semibold text-gray-700">Inbox</h3>
+            </div>
+
+            <!-- Filters -->
+            <div class="px-6 py-4 border-b">
+                <div class="flex flex-col sm:flex-row items-center justify-between">
+                    <!-- Order Section -->
+                    <div class="flex flex-wrap sm:flex-nowrap space-x-2 mb-4 sm:mb-0">
+                        <span class="font-medium text-gray-500 ">Order:</span>
+                        <button class="px-4 py-1 text-gray-700 bg-gray-100 hover:bg-gray-300 rounded-md">Newest</button>
+                        <button class="px-4 py-1 text-gray-700 bg-gray-100 hover:bg-gray-300 rounded-md">Oldest</button>
+                    </div>
+
+                    <!-- Filter Section -->
+                    <div class="flex flex-wrap sm:flex-nowrap space-x-2">
+                        <span class="font-medium text-gray-500">Filter:</span>
+                        <button class="px-4 py-1 text-gray-700 bg-blue-200 hover:bg-blue-400 rounded-md">All</button>
+                        <button class="px-4 py-1 text-gray-700 bg-gray-100 hover:bg-blue-400 rounded-md">Calls</button>
+                        <button class="px-4 py-1 text-gray-700 bg-gray-100 hover:bg-blue-400 rounded-md">SMS</button>
+                        <button class="px-4 py-1 text-gray-700 bg-gray-100 hover:bg-blue-400 rounded-md">Voicemails</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="px-6 py-4">
+                <div class="grid grid-cols-2 font-medium text-gray-500 mb-4">
+                    <span>Name</span>
+                    <span class="text-right">Last Contact</span>
+                </div>
+
+                <!-- List -->
+                <div class="space-y-4">
+                    <div class="flex flex-col space-y-2 border-b pb-4">
+                        <!-- name and avatar -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <img src="./src/assests/person1.png" alt="Avatar" class="w-10 h-10 rounded-full">
+                                <p class="font-medium text-gray-700">(304) 450-0258</p>
+                            </div>
+                            <!-- message count and last contact -->
+                            <div class="flex items-center space-x-4">
+                                <button class="bg-blue-500 text-white w-10 h-8 flex items-center justify-center rounded-full space-x-1 px-2">
+                                    <img src="./src/assests/phone-icon.png" alt="Phone Icon" class="w-4 h-4">
+                                    <span>7</span>
+                                </button>
+                                <span class="text-gray-500">9 Hours Ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="flex flex-col space-y-2 border-b pb-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <img src="./src/assests/person2.png" alt="Avatar" class="w-10 h-10 rounded-full">
+                                <p class="font-medium text-gray-700">(203) 950-2358</p>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <button class="bg-blue-500 text-white w-10 h-8 flex items-center justify-center rounded-full space-x-1 px-2">
+                                    <img src="./src/assests/phone-icon.png" alt="Phone Icon" class="w-4 h-4">
+                                    <span>7</span>
+                                </button>
+                                <span class="text-gray-500">7 Hours Ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col space-y-2 border-b pb-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <img src="./src/assests/person3.png" alt="Avatar" class="w-10 h-10 rounded-full">
+                                <p class="font-medium text-gray-700">(203) 950-2358</p>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <button class="bg-blue-500 text-white w-10 h-8 flex items-center justify-center rounded-full space-x-1 px-2">
+                                    <img src="./src/assests/phone-icon.png" alt="Phone Icon" class="w-4 h-4">
+                                    <span>7</span>
+                                </button>
+                                <span class="text-gray-500">4 Hours Ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col space-y-2 border-b pb-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <img src="./src/assests/person4.png" alt="Avatar" class="w-10 h-10 rounded-full">
+                                <p class="font-medium text-gray-700">(203) 950-2358</p>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <button class="bg-blue-500 text-white w-10 h-8 flex items-center justify-center rounded-full space-x-1 px-2">
+                                    <img src="./src/assests/phone-icon.png" alt="Phone Icon" class="w-4 h-4">
+                                    <span>7</span>
+                                </button>
+                                <span class="text-gray-500">5 Hours Ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+     
+    <div class="flex items-center justify-center mt-10 mx-auto sm:space-x-6 flex-col sm:flex-row">
+        <div class="relative bg-white bg-opacity-54 rounded-3xl shadow-lg w-full sm:w-[406px] h-[316px]" style="box-shadow: -30px 30px 30px 0px rgba(40, 40, 40, 0.05); opacity: 1;">
+            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                <img src="/src/assests/Doctor.png" alt="Main Image" class="w-full h-full object-cover rounded-3xl">
+            </div>
+        </div>
+        <div class="space-y-4 sm:w-[400px] w-full text-center sm:text-left">
+            <p class="text-2xl font-medium font-poppins text-gray-700 leading-[1.5]">
+                Bring new business in by getting more online reviews.
+            </p>
+            <p class="text-lg font-normal font-poppins text-gray-500 leading-[2]">
+                94% Use reviews to choose new doctor.
+            </p>
+        </div>
+    </div>
+    
+
+
+
+
+
+  
+   <div class="flex items-center justify-center mt-10 mx-auto sm:space-x-6 flex-col sm:flex-row-reverse">
+    <div class="relative bg-white bg-opacity-54 rounded-3xl shadow-lg w-full sm:w-[406px] h-[316px]" style="box-shadow: -30px 30px 30px 0px rgba(40, 40, 40, 0.05); opacity: 1;">
+        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <img src="/src/assests/gear.png" alt="Main Image" class="w-full h-full object-cover rounded-3xl">
+        </div>
+    </div>
+    <div class="space-y-4 sm:w-[400px] w-full text-center sm:text-left">
+        <p class="text-2xl font-medium font-poppins text-gray-700 leading-[1.5]">
+            Save time with collaborative tools and automations.
+        </p>
+        <p class="text-lg font-normal font-poppins text-gray-500 leading-[2]">
+            15+ Staff hours saved per week.
+        </p>
+    </div>
+</div>
+
+
+
+
+
+   
+   <div class="flex items-center justify-center mt-10 mx-auto sm:space-x-6 flex-col sm:flex-row">
+    <div class="relative bg-white bg-opacity-54 rounded-3xl shadow-lg w-full sm:w-[406px] h-[316px]" style="box-shadow: -30px 30px 30px 0px rgba(40, 40, 40, 0.05); opacity: 1;">
+        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <img src="/src/assests/customer.png" alt="Main Image" class="w-full h-full object-cover rounded-3xl">
+        </div>
+    </div>
+
+    <div class="space-y-4 sm:w-[400px] w-full text-center sm:text-left">
+        <p class="text-2xl font-medium font-poppins text-gray-700 leading-[1.5]">
+            Improve patient experience engaging the way they want.
+        </p>
+        <p class="text-lg font-normal font-poppins text-gray-500 leading-[2]">
+            90% People prefer texts to phone calls.
+        </p>
+    </div>
+</div>
+
+
+
+<div class="mt-20 mb-20 mx-5 sm:mx-10 lg:mx-20 flex flex-col lg:flex-row justify-between items-center bg-cover bg-center rounded-[30px] p-5 pt-24 pb-24" 
+    style="background-image: url('/src/assests/background-2.png');">
+    
+
+    <div class="text-left w-full lg:max-w-[50%] text-black space-y-4 mb-8 lg:mb-0">
+    
+        <p class="font-poppins text-[24px] sm:text-[28px] lg:text-[40px] font-medium leading-[32px] sm:leading-[36px] lg:leading-[50px]">
+            Seamless collaboration for healthcare teams
+        </p>
+        
+        <p class="font-poppins text-[14px] sm:text-[16px] lg:text-[18px] font-normal leading-[20px] sm:leading-[24px] lg:leading-[30px]">
+            With shared inboxes, any team member can resolve the team’s pending tasks. Individual staff members don’t get overwhelmed, and patients are always taken care of.
+        </p>
+    </div>
+    
+    
+    <div class="relative w-full max-w-[400px] sm:max-w-[500px] md:max-w-[650px] h-auto">
+        <img src="/src/assests/gride-image.png" alt="Healthcare Collaboration" class="w-full h-auto object-contain rounded-[15px]">
+    </div>
+</div>
+
+
+
+
+
+
+<div class="relative mt-20 mb-20 mx-5 sm:mx-10 lg:mx-20 flex flex-col lg:flex-row justify-between items-center overflow-hidden rounded-[30px] bg-cover bg-center p-5"
+    style="background-image: url('/src/assests/background-3.png'); min-height: 378px;">
+    
+   
+    <div class="absolute top-0 left-0 w-48 h-48 bg-purple-900 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+
+    
+    <div class="absolute bottom-0 right-0 w-48 h-48 bg-purple-900 rounded-full translate-x-1/2 translate-y-1/2"></div>
+    
+    
+    <div class="relative w-[150px] sm:w-[200px] lg:w-[370px] h-[150px] sm:h-[200px] lg:h-[381px] flex-shrink-0">
+        <img src="/src/assests/doctor-2.png" alt="Doctor Logo" class="w-full h-full object-cover rounded-tl-[30px]">
+    </div>
+    
+    
+    <div class="text-center lg:text-left space-y-4 max-w-full lg:max-w-[650px] mt-6 lg:mt-0 px-3 sm:px-5 lg:px-0">
+        <p class="font-poppins text-[18px] sm:text-[24px] lg:text-[40px] font-medium leading-[26px] sm:leading-[30px] lg:leading-[50px] break-words">
+            We work on a month-to-month basis, try for free with no commitments
+        </p>
+        <p class="font-poppins text-[12px]  sm:text-[14px] lg:text-[18px] font-normal leading-[18px] sm:leading-[22px] lg:leading-[30px] break-words">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-[30px]">
+            15 Days Free Trial
+        </button>
+    </div>
+</div>
+
+
+     
+
+</body>
+
+<footer class="text-white py-8 mt-3" style="background: rgba(42, 8, 150, 1);">
+    <div class="container mx-auto px-8 lg:px-20 grid grid-cols-1 lg:grid-cols-3 gap-8 text-center lg:text-left">
+       
+        <div>
+            <div class="flex items-center justify-center lg:justify-start space-x-2 p-3">
+                <img src="/src/assests/footer-logo.png" alt="Logo" class="w-10 h-10">
+                <span class="font-bold text-lg">patientgrid</span>
+            </div>
+            <p class="mt-4 text-sm">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            </p>
+           
+            <div class="flex justify-center lg:justify-start mt-4 space-x-6">
+                <img src="/src/assests/facebook.png" alt="Logo 1" class="w-5 h-5">
+                <img src="/src/assests/twitter.png" alt="Logo 2" class="w-5 h-5">
+                <img src="/src/assests/instagram.png" alt="Logo 3" class="w-5 h-5">
+            </div>
+            <div class="flex justify-center lg:justify-start mt-4 space-x-4">
+                <a href="#" class="text-white">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-white">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-white">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        
+        <div>
+            <ul class="space-y-4 ">
+                <li class="flex items-center justify-center space-x-4">
+                    <img src="/src/assests/phone-icon.png" alt="Phone Icon" class="w-5 h-5">
+                    <span>+91-8853923455</span>
+                </li>
+                <li class="flex items-center justify-center space-x-4">
+                    <img src="/src/assests/whatsapp.png" alt="WhatsApp Icon" class="w-5 h-5">
+                    <span>+91-4567895478</span>
+                </li>
+                <li class="flex items-center justify-center space-x-4 ">
+                    <img src="/src/assests/gmail.png" alt="Email Icon" class="w-5 h-5">
+                    <span>patientgrid@gmail.com</span>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div>
+            <h3 class="font-semibold text-center text-lg">Subscribe Newsletter</h3>
+            <div class="flex items-center justify-center mt-4">
+                <input type="email" placeholder="Email" class="w-2/3 px-4 py-2 rounded-full focus:outline-none">
+                <img src="/src/assests/start-icon.png" alt="logo" class="mt-1 ">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="border-t border-blue-700 mt-8 pt-4 text-center px-8 lg:px-20">
+        <div class="flex justify-center space-x-8 text-sm">
+            <a href="#" class="hover:underline">Products</a>
+            <a href="#" class="hover:underline">Plans</a>
+            <a href="#" class="hover:underline">More</a>
+        </div>
+        <p class="mt-4 text-sm">
+            &copy; Copyright 2023. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+
+
+</html>
